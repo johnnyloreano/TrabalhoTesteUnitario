@@ -79,6 +79,23 @@ public class DepComb {
     }
 
     public int[] encomendaCombustivel(int qtdade, boolean emerg) {
+        int[] productRemainder = new int[3];
+        int qtdGasolina;
+        int qtdAlcool;
+        int qtdAditivo;
+        
+        qtdGasolina = (int) (qtdade * 0.70);
+        qtdAlcool =   (int) (qtdade * 0.25);
+        qtdAditivo =  (int) (qtdade * 0.05);
+
+        if(emerg){
+
+
+        }
+        else{
+            if(this.gettGasolina() - qtdGasolina < DepComb.MAX_GASOLINA * 0.25 )
+                productRemainder[0] = -1;
+        }
         return null;
     }
 
