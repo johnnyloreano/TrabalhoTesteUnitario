@@ -32,7 +32,19 @@ public class DepComb {
     }
 
     public int recebeAditivo(int qtdade) {
-        return 0;
+        if(qtdade < 0)
+            return -1;
+        if(this.gettAditivo() == DepComb.MAX_ADITIVO)
+            return 0;
+        if(qtdade + this.gettAditivo() > DepComb.MAX_ADITIVO){
+            int total = qtdade + this.gettAditivo();
+            int remainder = total % DepComb.MAX_ADITIVO;
+            int canAdd = DepComb.MAX_ADITIVO * remainder;
+            this.tAditivo += canAdd;
+            return canAdd;
+        }
+
+        return this.gettAditivo();
     }
 
     public int recebeGasolina(int qtdade) {
