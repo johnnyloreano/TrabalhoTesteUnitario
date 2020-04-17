@@ -93,10 +93,22 @@ public class DepComb {
 
         }
         else{
+
+            if(this.gettAditivo() - qtdAditivo < DepComb.MAX_ADITIVO * 0.25)
+                return new int[]{-1,0,0,0};
             if(this.gettGasolina() - qtdGasolina < DepComb.MAX_GASOLINA * 0.25 )
-                productRemainder[0] = -1;
+                return new int[]{0,-1,0,0};
+            if(this.gettAlcool1() + this.gettAlcool2() - qtdGasolina < DepComb.MAX_ALCOOL * 0.25 )
+                return new int[]{0,0,-1,0};
+
+            this.tAditivo -= qtdAditivo;
+            this.tGasolina -= qtdGasolina;
+            this.tAlcool1 -= qtdAlcool / 2;
+            this.tAlcool2 -= qtdAlcool / 2;
+
+
+            return new int[] { this.tAditivo,  this.tGasolina, this.tAlcool1 , this.tAlcool2};
         }
-        return null;
     }
 
     @Override
