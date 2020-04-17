@@ -79,6 +79,8 @@ public class DepComb {
     }
 
     public int[] encomendaCombustivel(int qtdade, boolean emerg) {
+        if(qtdade <= 0)
+            return new int[]{-2,0,0,0};
         int[] productRemainder = new int[3];
         int qtdGasolina;
         int qtdAlcool;
@@ -88,8 +90,22 @@ public class DepComb {
         qtdAlcool =   (int) (qtdade * 0.25);
         qtdAditivo =  (int) (qtdade * 0.05);
 
-        if(emerg){
 
+        if(emerg){
+            if(this.gettAditivo() - qtdAditivo < DepComb.MAX_ADITIVO)
+                return new int[]{-1,0,0,0};
+            if(this.gettGasolina() - qtdGasolina < DepComb.MAX_GASOLINA)
+                return new int[]{0,-1,0,0};
+            if(this.gettAlcool1() + this.gettAlcool2() - qtdAlcool < DepComb.MAX_ALCOOL)
+                return new int[]{0,0,-1,0};
+
+            this.tAditivo -= qtdAditivo;
+            this.tGasolina -= qtdGasolina;
+            this.tAlcool1 -= qtdAlcool / 2;
+            this.tAlcool2 -= qtdAlcool / 2;
+
+
+            return new int[] { this.tAditivo,  this.tGasolina, this.tAlcool1 , this.tAlcool2};
 
         }
         else{
@@ -98,7 +114,7 @@ public class DepComb {
                 return new int[]{-1,0,0,0};
             if(this.gettGasolina() - qtdGasolina < DepComb.MAX_GASOLINA * 0.25 )
                 return new int[]{0,-1,0,0};
-            if(this.gettAlcool1() + this.gettAlcool2() - qtdGasolina < DepComb.MAX_ALCOOL * 0.25 )
+            if(this.gettAlcool1() + this.gettAlcool2() - qtdAlcool < DepComb.MAX_ALCOOL * 0.25 )
                 return new int[]{0,0,-1,0};
 
             this.tAditivo -= qtdAditivo;
