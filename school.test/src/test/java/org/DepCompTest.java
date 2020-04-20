@@ -1,5 +1,6 @@
+package org;
 
-import static junit.Assert.assertTrue;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Unit test for simple App.
