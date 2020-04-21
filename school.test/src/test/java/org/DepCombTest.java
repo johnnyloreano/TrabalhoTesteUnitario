@@ -20,10 +20,10 @@ public class DepCombTest {
         int res;
         res = this.depComb.recebeGasolina(900);
         assertEquals(900, res);
-        res = this.depComb.recebeGasolina(100);
-        assertEquals(100, res);
         res = this.depComb.recebeGasolina(10000);
-        assertEquals(8900, res);
+        assertEquals(9000, res);
+        res = this.depComb.recebeGasolina(1000);
+        assertEquals(0, res);
         res = this.depComb.recebeGasolina(-1);
         assertEquals(-1, res);
     }
