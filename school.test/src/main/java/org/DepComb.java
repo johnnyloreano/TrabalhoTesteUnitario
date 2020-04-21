@@ -59,7 +59,10 @@ public class DepComb {
             this.tGasolina += canAdd;
             return canAdd;
         }
-
+        else {
+            this.tGasolina += qtdade;
+            return qtdade;
+        }
     }
 
     public int recebeAlcool(int qtdade) {
@@ -74,7 +77,11 @@ public class DepComb {
             int canAdd = DepComb.MAX_ALCOOL * remainder;
             this.tAlcool1 += canAdd / 2;
             this.tAlcool2 += canAdd / 2;
-            return canAdd;
+            return canAdd;   
+        }
+        else {
+            this.tGasolina += qtdade;
+            return qtdade;
         }
     }
 
