@@ -1,3 +1,5 @@
+package org;
+
 public class DepComb {
     public static final int MAX_ADITIVO = 500;
     public static final int MAX_ALCOOL = 2500;
@@ -39,12 +41,13 @@ public class DepComb {
         if (qtdade + this.gettAditivo() > DepComb.MAX_ADITIVO) {
             int total = qtdade + this.gettAditivo();
             int remainder = total % DepComb.MAX_ADITIVO;
-            int canAdd = DepComb.MAX_ADITIVO * remainder;
+            int canAdd = qtdade - remainder;
             this.tAditivo += canAdd;
             return canAdd;
         }
-
-        return this.gettAditivo();
+        this.tAditivo += qtdade;
+        return qtdade;
+        
     }
 
     public int recebeGasolina(int qtdade) {
@@ -55,7 +58,7 @@ public class DepComb {
         if (qtdade + this.gettGasolina() > DepComb.MAX_GASOLINA) {
             int total = qtdade + this.gettGasolina();
             int remainder = total % DepComb.MAX_GASOLINA;
-            int canAdd = DepComb.MAX_GASOLINA * remainder;
+            int canAdd = qtdade - remainder;
             this.tGasolina += canAdd;
             return canAdd;
         }
@@ -74,13 +77,14 @@ public class DepComb {
         if (qtdade + totalSomado > DepComb.MAX_ALCOOL) {
             int total = qtdade + totalSomado;
             int remainder = total % DepComb.MAX_ALCOOL;
-            int canAdd = DepComb.MAX_ALCOOL * remainder;
+            int canAdd = qtdade - remainder;
             this.tAlcool1 += canAdd / 2;
             this.tAlcool2 += canAdd / 2;
             return canAdd;   
         }
         else {
-            this.tGasolina += qtdade;
+            this.tAlcool1 += qtdade / 2;
+            this.tAlcool2 += qtdade / 2;
             return qtdade;
         }
     }
@@ -88,7 +92,6 @@ public class DepComb {
     public int[] encomendaCombustivel(int qtdade, boolean emerg) {
         if(qtdade <= 0)
             return new int[]{-2,0,0,0};
-        int[] productRemainder = new int[3];
         int qtdGasolina;
         int qtdAlcool;
         int qtdAditivo;
