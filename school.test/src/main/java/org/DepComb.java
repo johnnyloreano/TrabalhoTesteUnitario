@@ -102,11 +102,11 @@ public class DepComb {
 
 
         if(emerg){
-            if(this.gettAditivo() - qtdAditivo < DepComb.MAX_ADITIVO)
+            if(this.gettAditivo() - qtdAditivo <= 0 )
                 return new int[]{-1,0,0,0};
-            if(this.gettGasolina() - qtdGasolina < DepComb.MAX_GASOLINA)
+            if(this.gettGasolina() - qtdGasolina <= 0)
                 return new int[]{0,-1,0,0};
-            if(this.gettAlcool1() + this.gettAlcool2() - qtdAlcool < DepComb.MAX_ALCOOL)
+            if(this.gettAlcool1() + this.gettAlcool2() - qtdAlcool <= 0)
                 return new int[]{0,0,-1,0};
 
             this.tAditivo -= qtdAditivo;
