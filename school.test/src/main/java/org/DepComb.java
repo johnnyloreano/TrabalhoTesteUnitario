@@ -49,7 +49,7 @@ public class DepComb {
     }
 
     public int recebeAlcool(int qtdade){
-        if(qtdade<0)return -1;
+        if(qtdade<=0)return -1;
         if(qtdade%2==1)qtdade--;//se for impar nao da pra armazenar 1 litro porque tem que manter a mesma quantidade em 2 tanques
         int maxAdd = MAX_ALCOOL - (tAlcool1 + tAlcool2);
         if(qtdade<=maxAdd){
