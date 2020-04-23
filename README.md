@@ -94,13 +94,13 @@ On-point: 10000
 
 | Caso | Classe de Teste | Resultado esperado | Resultado obtido |
 | --- | --- | --- | --- |
-| Método recebe 1000E emergência trueTodos os tanques cheios | EncomendaCombustivel | [450,9300,1125,1125] | [450,9300,1125,1125] |
-| Método recebe 1000E emergência true ou falseTanque de Aditivo vazio | EncomendaCombustivel | [-1,0,0, 0] | [-1,0,0, 0] |
-| Método recebe -1E emergência false | EncomendaCombustivel | [-2,0,0,0] | [-2,0,0,0] |
-| Método recebe -1E emergência true | EncomendaCombustivel | [-2,0,0,0] | [-2,0,0,0] |
-| Método recebe 1000E emergência true ou falseTanque de Gasolina vazio | EncomendaCombustivel | [0,-1,0, 0] | [0,-1,0, 0] |
-| Método recebe 1000E emergência true ou falseTanque de Álcool vazio | EncomendaCombustivel | [0,0,-1, 0] | [0,0,-1, 0] |
-| Método recebe 1000E emergência falseTodos os tanques cheios | EncomendaCombustivel | [450,9300,1125,1125] |[450,9300,1125,1125]|
+| Método recebe 1000 e emergência trueTodos os tanques cheios | EncomendaCombustivel | [450,9300,1125,1125] | [450,9300,1125,1125] |
+| Método recebe 1000 e emergência true ou falseTanque de Aditivo vazio | EncomendaCombustivel | [-1,0,0, 0] | [-1,0,0, 0] |
+| Método recebe -1 e emergência false | EncomendaCombustivel | [-2,0,0,0] | [-2,0,0,0] |
+| Método recebe -1 e emergência true | EncomendaCombustivel | [-2,0,0,0] | [-2,0,0,0] |
+| Método recebe 1000 e emergência true ou falseTanque de Gasolina vazio | EncomendaCombustivel | [0,-1,0, 0] | [0,-1,0, 0] |
+| Método recebe 1000 e emergência true ou falseTanque de Álcool vazio | EncomendaCombustivel | [0,0,-1, 0] | [0,0,-1, 0] |
+| Método recebe 1000 e emergência falseTodos os tanques cheios | EncomendaCombustivel | [450,9300,1125,1125] |[450,9300,1125,1125]|
 
 **Conclusão:**
 
