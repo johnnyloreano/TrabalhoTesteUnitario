@@ -84,17 +84,30 @@ public class DepComb {
         double precisaGasolina=qtdade*0.7;
         double precisaAditivo=qtdade*0.05;
         double precisaAlcool=qtdade*0.25;
-        if(rAditivo<precisaAditivo || rGasolina<precisaGasolina || rAlcool<precisaAlcool){
-            //se algum ou alguns sao insuficientes, descobre quais preenche com -1 e retorna.
-            if(rAditivo<precisaAditivo)ret[0]=-1;
-            else ret[0]=0;
-            if(rGasolina<precisaGasolina)ret[1]=-1;
-            else ret[1]=0;
-            if(rAlcool<precisaAlcool)ret[2]=-1;
-            else ret[2]=0;
+
+        //se algum ou alguns sao insuficientes, descobre quais preenche com -1 e retorna.
+        if(rAditivo<precisaAditivo){
+            ret[0]=-1;
+            ret[1]=0;
+            ret[2]=0;
             ret[3]=0;
             return ret;
         }
+        if(rGasolina<precisaGasolina){
+            ret[0]=0;
+            ret[1]=-1;
+            ret[2]=0;
+            ret[3]=0;
+            return ret;
+        }
+        if(rAlcool<precisaAlcool) {
+            ret[0] = 0;
+            ret[1] = 0;
+            ret[2] = -1;
+            ret[3] = 0;
+            return ret;
+        }
+
         //se nao preenche normal e subtrai os valores corretos.
         tAditivo-=(int)precisaAditivo;
         ret[0]=tAditivo;

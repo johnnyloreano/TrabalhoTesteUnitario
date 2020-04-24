@@ -15,18 +15,6 @@ public class DepCombTest {
         depComb = new DepComb(100, 100, 100, 100);
     }
 
-    @Test
-    public void testAddGasolinajao() {
-        int res;
-        res = this.depComb.recebeGasolina(900);
-        assertEquals(900, res);
-        res = this.depComb.recebeGasolina(10000);
-        assertEquals(9000, res);
-        res = this.depComb.recebeGasolina(1000); //ok
-        assertEquals(0, res);
-        res = this.depComb.recebeGasolina(-1);
-        assertEquals(-1, res);
-    }
     //------------------------------------------
 
     @Test
@@ -69,20 +57,6 @@ public class DepCombTest {
         assertEquals(100, res);
     }
 
-    //------------------------------------------
-
-    @Test
-    public void testAddAlcooljao() {
-        int res;
-        res = this.depComb.recebeAlcool(2000);
-        assertEquals(2000, res);
-        res = this.depComb.recebeAlcool(500);
-        assertEquals(300, res);
-        res = this.depComb.recebeAlcool(300);
-        assertEquals(0, res);
-        res = this.depComb.recebeAlcool(-1);
-        assertEquals(-1, res);
-    }
         //------------------------------------------
     @Test
         public void testAddAlcool1() {
@@ -130,18 +104,6 @@ public class DepCombTest {
         //------------------------------------------
 
     @Test
-    public void testAddAditivojao() {
-        int res;
-        res = this.depComb.recebeAditivo(250);
-        assertEquals(250, res);
-        res = this.depComb.recebeAditivo(500);
-        assertEquals(150, res);
-        res = this.depComb.recebeAditivo(100);
-        assertEquals(0, res);
-        res = this.depComb.recebeAditivo(-1);
-        assertEquals(-1, res);
-    }
-    @Test
     public void testAddAditivo1() {
         int res;
         depComb = new DepComb(100, 500, 100, 100);
@@ -172,37 +134,9 @@ public class DepCombTest {
     @Test
     public void testAddAditivo5() {
         int res;
-        depComb = new DepComb(100, 400, 100, 100); 
+        depComb = new DepComb(100, 400, 100, 100);
         res = this.depComb.recebeAlcool(1000);
         assertEquals(100, res);
-    }
-    
-
-        //------------------------------------------
-
-    @Test
-    public void testEncomendaCombustivelEmergencialjao(){
-        int[] res = this.depComb.encomendaCombustivel(3000, true);
-        assertArrayEquals(new int[]{-1,0,0,0}, res);
-
-        res = this.depComb.encomendaCombustivel(200, true);
-        assertArrayEquals(new int[]{0,-1,0,0}, res);
-
-        this.depComb.recebeGasolina(2500);
-        res = this.depComb.encomendaCombustivel(900, true);
-        assertArrayEquals(new int[]{0,0,-1,0}, res);
-
-        res = this.depComb.encomendaCombustivel(-1, true);
-        assertArrayEquals(new int[]{-2,0,0,0}, res);
-
-        res = this.depComb.encomendaCombustivel(0, true);
-        assertArrayEquals(new int[]{-2,0,0,0}, res);
-
-        this.depComb.recebeAditivo(300);
-        this.depComb.recebeAlcool(2000);
-
-        res = this.depComb.encomendaCombustivel(200, true);
-        assertArrayEquals(new int[]{390,2460,1075,1075}, res);
     }
 
     //-------------------------
