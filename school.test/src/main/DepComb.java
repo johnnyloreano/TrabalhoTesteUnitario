@@ -1,4 +1,4 @@
-package org;
+
 
 public class DepComb {
     public static final int MAX_ADITIVO = 500;
@@ -65,7 +65,7 @@ public class DepComb {
     }
 
     public int[] encomendaCombustivel(int qtdade,boolean emerg){
-        if(qtdade<0){
+        if(qtdade<=0){
             //valor invalido
             int[] ret = {-2,0,0,0};
             return ret;
