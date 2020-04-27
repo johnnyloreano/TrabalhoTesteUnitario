@@ -102,6 +102,15 @@ On-point: 10000
 | Método recebe 1000 e emergência true ou falseTanque de Álcool vazio | EncomendaCombustivel | [0,0,-1, 0] | [0,0,-1, 0] |
 | Método recebe 1000 e emergência falseTodos os tanques cheios | EncomendaCombustivel | [450,9300,1125,1125] |[450,9300,1125,1125]|
 
+**Usando o driver de teste de outro grupo:**
+
+Ao trocar os driver de teste com outro grupo, já foi identificado que o driver tinha um formato diferente de teste do nosso grupo, o que 
+dificultou do entedimento do mesmo, com esse problema em vista, tivemos que modificar ele para ficar no formato que fizemos nosso driver de teste. Além disso, a modificação também incluio mudar algumas variaveis de lugar, já que o programa principal usado por esse outro grupo estava provavelmente diferente do nosso.
+
+Foi encontrado também alguns erros nesse driver de teste, em relação ao resultado esperado colocado pelo outro grupo, que em alguns casos de teste, especificamente os de colocar combustível em um tanque, estava calculado errado, algo percebido ao fazer alguns testes de mesa, mas de resto, o driver rodou com sucesso sem erros no resultado obtido pelo nosso programa.
+
 **Conclusão:**
 
 Os métodos a serem feitos para o uso de testes pareceu ser a parte mais simples do trabalho, com uma estrutura já disponível, fazê-los não foi tão trabalhoso. No entanto o mesmo não pode ser dito sobre os casos de teste, pois eles teriam que ser, cada um, calculado em um teste de mesa para ter certeza que o resultado esperado e o resultado que os métodos retornavam eram os mesmos.
+
+Além disso, trocar drivers de teste com outro grupo e usa-ló em nossa classe principal tornou-se uma tarefa trabalhosa, já que tivemos que adaptar o driver do outro grupo para funcionar corretamente em nosso programa.
